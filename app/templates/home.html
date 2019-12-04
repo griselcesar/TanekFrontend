@@ -1,0 +1,74 @@
+<div class="row">
+	<aside class="col-lg-3">
+		<h4> <span class="glyphicon glyphicon-align-justify"></span> Menu de opciones</h4>
+		<ul class="nav nav-pills nav-stacked">
+		  <li role="presentation" class="active"><a href="#!/">
+		  	<span class="glyphicon glyphicon-user"></span> Clientes</a>
+		  </li>
+		  
+		</ul>
+	</aside>
+	<section class="col-lg-9">
+		<div class="row">
+			<div class="col-lg-4">
+				<br>
+				<h4>{{titulo}}</h4>
+			</div>
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
+				<br>
+				<h4>Bienvenido, {{usuario}}. <span class="glyphicon glyphicon-log-out" title="Salir" ng-click="Salir()"></span></h4>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-lg-4">
+				<h4>Listado de Clientes</h4>
+			</div>
+			<div class="col-lg-4">
+				
+				<div class="form-group">
+					<div class="input-group">
+						<input type="text" id="q" class="form-control" placeholder="Buscar..." ng-model="q">
+						<label for="q" class="input-group-addon">
+							<span class="glyphicon glyphicon-search"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<button class="btn btn-info" type="button" ng-click="Nuevo()">
+					<span class="glyphicon glyphicon-plus"></span> Nuevo
+				</button>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-4" ng-repeat="cliente in clientes | orderBy:'+nombre' | filter:q">
+		    <div class="thumbnail">
+		      <img src="assets/imgs/user.png" alt="{{cliente.nombre}}">
+		      <div class="caption">
+		        <h4>{{cliente.nombre}}</h4>
+		        <p>
+		        	<b>Alias:</b> {{cliente.alias}} <br>
+		        	<b>Teléfono:</b> {{"+58"+cliente.telefono }} <br>
+		        	<b>Saldo:</b> {{cliente.saldo | currency: 'Bs '}} <br>
+		        </p>
+		        <button class="btn btn-info" type="button" ng-click="Informacion(cliente.id)">
+		        	<span class="glyphicon glyphicon-exclamation-sign"></span>
+		        </button>
+		        <button class="btn btn-success" type="button" ng-click="Transaccion(cliente.id)">
+		        	<span class="glyphicon glyphicon-usd"></span>
+		        </button>
+		        <button class="btn btn-warning" type="button" ng-click="Editar(cliente.id)">
+		        	<span class="glyphicon glyphicon-edit"></span>
+		        </button>
+		        <button class="btn btn-danger" type="button" ng-click="Eliminar(cliente.id)">
+		        	<span class="glyphicon glyphicon-remove"></span>
+		        </button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</section>
+</div>

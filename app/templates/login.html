@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-lg-4 col-md-4 col-sm-3 hidden-xs"></div>
+	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+		<h3 class="text-center">{{titulo}}</h3>
+		<form ng-submit="Entrar()">
+			
+			<div class="form-group">
+				<div class="input-group">
+					<label for="email" class="input-group-addon">
+						<span class="glyphicon glyphicon-user"></span>
+					</label>
+					<input type="email" placeholder="Correo Electrónico" id="email" class="form-control" ng-model="user.email" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="input-group">
+					<label for="password" class="input-group-addon">
+						<span class="glyphicon glyphicon-lock"></span>
+					</label>
+					<input type="password" placeholder="Contraseña" id="password" class="form-control" ng-model="user.password" required>
+				</div>
+			</div>
+
+			<div class="alert alert-danger alert-dismissible" role="alert" ng-show="info">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>¡Advertencia!</strong> {{info}}.
+			</div>
+
+			<div class="form-group">
+				<button class="btn btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-transfer"></span> Entrar
+				</button>
+			</div>
+
+		</form>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-3 hidden-xs"></div>
+</div>

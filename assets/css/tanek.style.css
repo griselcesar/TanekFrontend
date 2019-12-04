@@ -1,0 +1,18 @@
+header {
+	background: steelblue;
+	color: #fff;
+}
+
+body {
+	background: #eee;
+}
+
+main {
+	background: #fff;
+	min-height: 90vh;
+}
+
+footer {
+	background: steelblue;
+	color: #fff;
+}

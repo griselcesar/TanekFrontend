@@ -1,0 +1,115 @@
+<div class="row">
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4">
+		<h3 class="text-center">{{titulo}}</h3>
+		<form ng-submit="Guardar()">
+			
+			<div class="form-group">
+				<div class="input-group">
+					<label for="nombre" class="input-group-addon">
+						<span class="glyphicon glyphicon-user"></span>
+					</label>
+					<input 
+						type="text"
+						id="nombre"
+						placeholder="Nombre del Cliente"
+						class="form-control"
+						ng-model="cliente.nombre" 
+						required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="input-group">
+					<label for="rif" class="input-group-addon">
+						<span class="glyphicon glyphicon-credit-card"></span>
+					</label>
+					<input 
+						type="text"
+						id="rif"
+						placeholder="RIF/CI del Cliente"
+						class="form-control"
+						ng-model="cliente.rif" 
+						required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="input-group">
+					<label for="telefono" class="input-group-addon">
+						<span class="glyphicon glyphicon-phone"></span>
+					</label>
+					<input 
+						type="text"
+						id="telefono"
+						placeholder="Teléfono del Cliente"
+						class="form-control"
+						ng-model="cliente.telefono" 
+						required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="input-group">
+					<label for="email" class="input-group-addon">
+						<span class="glyphicon glyphicon-envelope"></span>
+					</label>
+					<input 
+						type="email"
+						id="email"
+						placeholder="Correo del Cliente"
+						class="form-control"
+						ng-model="cliente.email" 
+						required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="input-group">
+					<label for="alias" class="input-group-addon">
+						<span class="glyphicon glyphicon-star"></span>
+					</label>
+					<input 
+						type="text"
+						id="alias"
+						placeholder="Alias del Cliente"
+						class="form-control"
+						ng-model="cliente.alias" 
+						required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="input-group">
+					<label for="direccion" class="input-group-addon">
+						<span class="glyphicon glyphicon-road"></span>
+					</label>
+					<input 
+						type="text"
+						id="direccion"
+						placeholder="Direccion del Cliente"
+						class="form-control"
+						ng-model="cliente.direccion" 
+						required />
+				</div>
+			</div>
+
+			<div class="alert alert-danger alert-dismissible" role="alert" ng-show="info">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>¡Advertencia!</strong> {{info}}.
+			</div>
+
+			<div class="form-group">
+				<button class="btn btn-info" type="Submit">
+					<span class="glyphicon glyphicon-floppy-disk"></span> Guardar
+				</button>
+
+				<button class="btn btn-danger" ng-click="Cancelar()">
+					<span class="glyphicon glyphicon-remove-sign"></span> Cancelar
+				</button>	
+			</div>
+
+		</form>
+	</div>
+	<div class="col-lg-4"></div>
+</div>
